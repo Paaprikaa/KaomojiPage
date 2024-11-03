@@ -6,6 +6,14 @@ export enum SectionType {
   Tired = "Tired",
 }
 
+export enum KaomojiLibraryType {
+  Happy = "HappyKaomoji",
+  Sad = "SadKaomoji",
+  Angry = "AngryKaomoji",
+  Scared = "ScaredKaomoji",
+  Tired = "TiredKaomoji",
+}
+
 type ValueOf<T> = T[keyof T];
 export type ValueSectionType = ValueOf<typeof SectionType>;
 

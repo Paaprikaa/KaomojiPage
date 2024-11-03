@@ -1,7 +1,13 @@
-import { MouseEventHandler, useState } from "react";
-import { Cover, Text } from "../../KaomojiPageStyle";
-import { SectionType, ValueSectionType } from "../HomeTypes";
-import { Section, Sections } from "./HomeStyle";
+import { useState } from "react";
+import { SectionType } from "../../IKaomoji";
+import {
+  Cover,
+  Logo,
+  Section,
+  Sections,
+  Text,
+  EffectText,
+} from "../../KaomojiStyle";
 import { ShowSection } from "../ShowSection/ShowSection";
 
 export default function Home() {
@@ -15,13 +21,16 @@ export default function Home() {
 
   return (
     <>
-      <Cover />
+      <Cover>
+        <Logo src="/logoKaomoji.png" alt="Welcome to Kaomoji" />
+      </Cover>
       <Sections>
         {(Object.keys(SectionType) as Array<keyof typeof SectionType>).map(
           (key) => {
             return (
               <Section onClick={goToSection(key)} key={`${key}-section`}>
                 <Text>{key.toString()}</Text>
+                {/* <EffectText>{key.toString()}</EffectText> */}
               </Section>
             );
           }
